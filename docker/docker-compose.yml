@@ -11,3 +11,14 @@ services:
       - "5432:5432"
     expose:
       - "5432"
+  ui:
+    container_name: ui
+    build:
+      context: ../ui/sustainability-ui
+      target: builder
+    ports:
+      - 80:80
+    volumes:
+      - ../ui/sustainability-ui:/project
+      - /project/node_modules
+  
