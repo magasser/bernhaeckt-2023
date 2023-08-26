@@ -54,7 +54,7 @@ import {AddIndicatorDialogComponent} from "./components/admin/add-indicator-dial
     AddIndicatorDataDialogComponent,
     VisualizationTableResultComponent,
     CountyComponent,
-    AddIndicatorDialogComponent
+    AddIndicatorDialogComponent,
     VisualizationTableMatrixResultComponent
   ],
   imports: [
