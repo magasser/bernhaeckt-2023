@@ -1,5 +1,5 @@
 INSERT INTO counties VALUES ('9b9cd91e-630f-4c79-b793-0d301c778ab4', 3792, 'Saanen');
-INSERT INTO counties VALUES ('207c42d0-3add-4b5f-87ec-5a671700903b', 3785, 'Gsteig ');
+INSERT INTO counties VALUES ('207c42d0-3add-4b5f-87ec-5a671700903b', 3785, 'Gsteig');
 INSERT INTO counties VALUES ('e3b88083-748b-4434-aa53-9e82b1702199', 3782, 'Lauenen');
 INSERT INTO indicators VALUES ('e377520a-0de1-4b8d-88e0-f42a08248664', 'Summe geschützter Flächen', '', '%');
 INSERT INTO indicators VALUES ('258d8e13-4470-42b0-8b59-60d5f6d2811a', 'Klimaschutz: Treibhausgas-Emissione pro Einwohner*in ', '', 'CO2');

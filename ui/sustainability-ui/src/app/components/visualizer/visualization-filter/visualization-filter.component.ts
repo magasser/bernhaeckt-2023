@@ -20,6 +20,7 @@ export class VisualizationFilterComponent implements OnInit{
     countyList: any = [];
     indicatorList: any = [];
 
+    @Input() filter: any = {};
     @Output() filterDataEvent = new EventEmitter<CountyData[]>();
 
 
@@ -29,6 +30,11 @@ export class VisualizationFilterComponent implements OnInit{
     data: CountyData[] = [];
 
     ngOnInit() {
+        this.counties.setValue(this.filter?.counties ?? []);
+        this.dimensions.setValue(this.filter?.dimensions ?? []);
+        this.topics.setValue(this.filter?.topics ?? []);
+        this.indicators.setValue(this.filter?.indicators ?? []);
+
         this.loadData();
     }
 
@@ -46,7 +52,6 @@ export class VisualizationFilterComponent implements OnInit{
         if (this.indicators.value.length !== 0) {
             filteredData = filteredData.filter((entry) => this.indicators.value?.includes(entry.name));
         }
-        console.log(filteredData)
         this.filterDataEvent.emit(filteredData);
     }
 
@@ -58,6 +63,7 @@ export class VisualizationFilterComponent implements OnInit{
                 this.countyList = this.uniquify(this.data.map((countyData) => countyData.county));
                 this.indicatorList = this.uniquify(this.data.map((countyData) => countyData.name));
 
+                this.updateFilter();
             }
         )
     }

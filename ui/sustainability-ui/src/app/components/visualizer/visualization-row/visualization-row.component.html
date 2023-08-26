@@ -9,11 +9,18 @@
             </mat-panel-description>
         </mat-expansion-panel-header>
         <div>
-            <app-visualization-filter (filterDataEvent)="updateFilteredData($event)"></app-visualization-filter>
-            <div>
-                <app-visualization-table-result *ngIf="config.showTable" [data]="filteredData"></app-visualization-table-result>
-                <app-visualization-table-matrix-result *ngIf="config.showMatrix" [data]="filteredData"></app-visualization-table-matrix-result>
-                <app-visualization-chart-result [data]="filteredData" *ngIf="config.showChart"></app-visualization-chart-result>
+            <app-visualization-filter (filterDataEvent)="updateFilteredData($event)" [filter]="config.filters ?? {}"></app-visualization-filter>
+            <div class="container" [class.container-2]="config.rows === 2"
+                 [class.container-3]="config.rows === 3"
+                 [class.container-4]="config.rows === 4">
+                <ng-container *ngFor="let item of config.config.sort(sortByWeight)">
+                    <app-visualization-table-result [data]="filteredData"
+                                                    *ngIf="item.type === ItemType.TABLE"></app-visualization-table-result>
+                    <app-visualization-table-matrix-result [data]="filteredData"
+                                                           *ngIf="item.type === ItemType.MATRIX"></app-visualization-table-matrix-result>
+                    <app-visualization-chart-result [data]="filteredData"
+                                                           *ngIf="item.type === ItemType.SPIDER_CHART"></app-visualization-chart-result>
+                </ng-container>
             </div>
         </div>
     </mat-expansion-panel>

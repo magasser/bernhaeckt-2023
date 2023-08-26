@@ -24,7 +24,6 @@ export class VisualizationTableMatrixResultComponent {
         }, new Map<string, any>());
         this.calculatedData = [...this.calculatedData.values()];
         this.displayedColumns = this.uniquify(this.calculatedData.flatMap((entry: any) => Object.keys(entry)));
-        console.log(this.displayedColumns)
     }
 
     uniquify(input: any) {
