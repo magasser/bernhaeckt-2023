@@ -55,11 +55,11 @@ export class IndicatorsComponent {
 
     indicators.forEach(indicator => {
       this.indicatorData.push({
-        id: indicator.id,
-        name: indicator.name,
-        comment: indicator.comment,
-        unit: indicator.unit,
-        topicId: indicator.topicId
+        id: indicator.id ?? '',
+        name: indicator.name ?? '',
+        comment: indicator.comment ?? '',
+        unit: indicator.unit ?? '',
+        topicId: indicator.topicId ?? ''
       });
     });
 

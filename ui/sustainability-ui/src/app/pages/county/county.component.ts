@@ -53,7 +53,7 @@ export class CountyComponent implements OnInit {
         return;
       }
 
-      const rawData = new RawData('', result.indicator.id, result.value, result.source.id, this.id);
+      const rawData = new RawData('', result.indicator?.id, result.value, result.source?.id, this.id);
 
       this.rawDataService.saveRawData(rawData).subscribe((next) => {
         this.refreshCountyData();
@@ -72,8 +72,8 @@ export class CountyComponent implements OnInit {
       }
 
       data.raw_value = result.value;
-      data.source_id = result.source.id;
-      data.source_title = result.source.title;
+      data.source_id = result.source?.id;
+      data.source_title = result.source?.title;
 
       this.countyService.updateCountyData(data).subscribe(
           (next) => this.refreshCountyData());

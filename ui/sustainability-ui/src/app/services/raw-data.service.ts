@@ -15,6 +15,7 @@ export class RawDataService {
   public saveRawData(rawData: RawData): Observable<RawData> {
     const url = `${this.baseUrl}/rawdata`;
 
+    console.log('save')
     return this.http.post<RawData>(url, rawData, { headers: this.headers});
   }
 
