@@ -1,10 +1,12 @@
 package ch.planval.datavisualizer.controller;
 
+import ch.planval.datavisualizer.model.CountyData;
 import ch.planval.datavisualizer.model.RawData;
 import ch.planval.datavisualizer.service.RawDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,4 +18,8 @@ public interface RawDataController {
     @RequestMapping(path = "/rawdata", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping("/")
     void saveRawData(@RequestBody RawData rawData);
+
+    @RequestMapping(path = "/rawdata", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping("/")
+    void updateRawData(@RequestBody RawData data);
 }

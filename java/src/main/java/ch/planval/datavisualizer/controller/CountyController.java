@@ -47,8 +47,4 @@ public interface CountyController {
     @RequestMapping(path = "/counties/data", method = RequestMethod.GET)
     @GetMapping("/")
     List<CountyData> getAllCountiesData();
-
-    @RequestMapping(path = "/counties/data", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @PutMapping("/")
-    void updateCountyData(@RequestBody CountyData data);
 }

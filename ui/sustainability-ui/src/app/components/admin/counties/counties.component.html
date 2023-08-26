@@ -6,16 +6,16 @@
     <table class="county-table" mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef i18n>Name</th>
-            <td mat-cell *matCellDef="let county">{{county.name}}</td>
+            <td mat-cell *matCellDef="let county">{{county?.name}}</td>
         </ng-container>
         <ng-container matColumnDef="zip">
             <th mat-header-cell *matHeaderCellDef i18n>ZIP Code</th>
-            <td mat-cell *matCellDef="let county">{{county.zip}}</td>
+            <td mat-cell *matCellDef="let county">{{county?.zip}}</td>
         </ng-container>
         <ng-container matColumnDef="details">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let county">
-                <a class="arrow-icon" [routerLink]="['/admin/county', county.id]">
+                <a class="arrow-icon" [routerLink]="['/admin/county', county?.id]">
                     <mat-icon color="primary">arrow_forward</mat-icon>
                 </a>
             </td>

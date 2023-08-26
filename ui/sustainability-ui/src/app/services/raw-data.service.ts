@@ -18,6 +18,12 @@ export class RawDataService {
     return this.http.post<RawData>(url, rawData, { headers: this.headers});
   }
 
+  public updateRawData(data: RawData): Observable<RawData> {
+    const url = `${this.baseUrl}/rawdata`;
+
+    return this.http.put<RawData>(url, data, { headers: this.headers });
+  }
+
   private handleError(error: HttpErrorResponse): Observable<never> {
     const msg = error.error instanceof ErrorEvent
     ? error.error.message

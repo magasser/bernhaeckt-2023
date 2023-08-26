@@ -20,4 +20,12 @@ public class RawDataService {
     public void saveRawData(final RawData rawData) {
         this.rawDataRepository.save(rawData);
     }
+
+    public void updateRawData(final RawData rawData) {
+        RawData oldData = this.rawDataRepository.findById(rawData.getId()).orElseThrow();
+
+        this.rawDataRepository.delete(oldData);
+
+        this.rawDataRepository.save(rawData);
+    }
 }
