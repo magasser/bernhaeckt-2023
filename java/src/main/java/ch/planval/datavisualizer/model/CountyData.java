@@ -1,11 +1,15 @@
 package ch.planval.datavisualizer.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+
+import java.util.UUID;
 
 @Data
 @Entity
@@ -14,8 +18,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CountyData {
     @Id
-    private Long id;
-
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     private String name;
     private String comment;
     private String unit;

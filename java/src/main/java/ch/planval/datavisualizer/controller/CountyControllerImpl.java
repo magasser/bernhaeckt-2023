@@ -50,4 +50,9 @@ public class CountyControllerImpl implements CountyController {
     public List<County> getAllCounties() {
         return this.countyService.getAllCounties();
     }
+
+    @Override
+    public void saveCounty(County county) {
+        this.countyService.saveCounty(county);
+    }
 }

@@ -33,8 +33,8 @@ public class IndicatorControllerImpl implements IndicatorController {
     }
 
     @Override
-    public void saveIndicator(Indicator snippetToSave) {
-        this.indicatorService.saveIndicator(snippetToSave);
+    public void saveIndicator(Indicator indicator) {
+        this.indicatorService.saveIndicator(indicator);
     }
 
 }

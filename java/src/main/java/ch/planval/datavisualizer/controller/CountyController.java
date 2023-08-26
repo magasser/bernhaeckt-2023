@@ -5,8 +5,11 @@ import ch.planval.datavisualizer.model.CountyData;
 import ch.planval.datavisualizer.service.CountyDataService;
 import ch.planval.datavisualizer.service.CountyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -35,4 +38,8 @@ public interface CountyController {
     @RequestMapping(path = "/counties/zip/{zip}", method = RequestMethod.GET)
     @GetMapping("/")
     County getCountyByZip(@PathVariable(name="zip") String zip);
+
+    @RequestMapping(path = "/county", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping("/")
+    void saveCounty(@RequestBody County county);
 }
