@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, throwError } from 'rxjs';
 import {Indicator} from "../models/indicator";
+import {County} from "../models/county";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,12 @@ export class IndicatorService {
       }),
       catchError(this.handleError)
     );
+  }
+
+  public saveIndicator(indicator: Indicator): void {
+    const url = `${this.baseUrl}/indicators`;
+
+    this.http.post<County>(url, indicator, { headers: this.headers}).subscribe({error: this.handleError});
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {

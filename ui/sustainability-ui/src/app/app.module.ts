@@ -33,7 +33,8 @@ import { CountyComponent } from './pages/county/county.component';
 import { CountyIndicatorModifyDialogComponent } from './components/admin/dialogs/county-indicator-modify-dialog/county-indicator-modify-dialog.component';
 import { AddIndicatorDataDialogComponent } from './components/admin/dialogs/add-indicator-data-dialog/add-indicator-data-dialog.component';
 import { VisualizationTableResultComponent } from './components/visualizer/visualization-table-result/visualization-table-result.component';
-import { SourceComponent } from './models/source/source.component';
+import { VisualizationTableMatrixResultComponent } from './components/visualizer/visualization-table-matrix-result/visualization-table-matrix-result.component';
+import {AddIndicatorDialogComponent} from "./components/admin/add-indicator-dialog/add-indicator-dialog.component";
 
 @NgModule({
   declarations: [
@@ -52,14 +53,16 @@ import { SourceComponent } from './models/source/source.component';
     CountyIndicatorModifyDialogComponent,
     AddIndicatorDataDialogComponent,
     VisualizationTableResultComponent,
-    SourceComponent
+    CountyComponent,
+    AddIndicatorDialogComponent,
+    VisualizationTableMatrixResultComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ChartModule,
     PanelModule,
-    MatFormFieldModule, 
+    MatFormFieldModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
@@ -67,8 +70,8 @@ import { SourceComponent } from './models/source/source.component';
     MatIconModule,
     MatTableModule,
     MatButtonModule,
-    MatDialogModule, 
-    MatInputModule, 
+    MatDialogModule,
+    MatInputModule,
     FormsModule,
     MatExpansionModule,
     MatSelectModule,
