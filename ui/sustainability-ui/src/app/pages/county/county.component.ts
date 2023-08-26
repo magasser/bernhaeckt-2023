@@ -7,6 +7,7 @@ import { AddIndicatorDataDialogComponent } from 'src/app/components/admin/dialog
 import { CountyIndicatorModifyDialogComponent } from 'src/app/components/admin/dialogs/county-indicator-modify-dialog/county-indicator-modify-dialog.component';
 import { CountyData } from 'src/app/models/countyData';
 import { Indicator } from 'src/app/models/indicator';
+import { RawData } from 'src/app/models/raw-data';
 import { Source } from 'src/app/models/source';
 import { CountyService } from 'src/app/services/county.service';
 import { IndicatorService } from 'src/app/services/indicator.service';
@@ -51,6 +52,12 @@ export class CountyComponent implements OnInit {
       if (!result) {
         return;
       }
+
+      const rawData = new RawData('', result.indicator.id, result.value, result.source.id, this.id);
+  
+      this.rawDataService.saveRawData(rawData);
+  
+      await this.refreshCountyData();
     });
   }
 
@@ -64,15 +71,14 @@ export class CountyComponent implements OnInit {
         return;
       }
 
-
-
       data.raw_value = result.value;
-      //data.source = result.source;
+      data.source_id = result.source.id;
+      data.source_title = result.source.title;
 
       this.countyService.updateCountyData(data);
 
       await this.refreshCountyData();
-    })
+    });
   }
 
   private async refreshCountyData(): Promise<void> {
