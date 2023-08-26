@@ -11,8 +11,8 @@ import {CountyService} from "../../services/county.service";
 })
 export class DataEvaluationComponent {
     rows: any[] = [
-        {title: 'Alle Gemeinden', showTable: true},
-        {title: 'Gemeinden Bern', description: 'Alle Gemeinden im Kanton Bern', showTable: true},
-        {title: 'Gemeinden Vergleichen', description: 'Verschiedene Gemeinden vergleichen', showTable: false}
+        {title: 'Alle Gemeinden', showTable: true, showChart: false, showMatrix: false},
+        {title: 'Gemeinden Bern', description: 'Alle Gemeinden im Kanton Bern', showTable: false, showChart: false, showMatrix: true},
+        {title: 'Gemeinden Vergleichen', description: 'Verschiedene Gemeinden vergleichen', showTable: false, showChart: true, showMatrix: false}
     ];
 }

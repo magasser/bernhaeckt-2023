@@ -13,9 +13,7 @@ export class VisualizationChartResultComponent implements OnChanges{
 
   ngOnChanges(changes: any) {
     let labels: string[] = [];
-    let values: [] = [];
     if(changes.data.currentValue.length !== 0) {
-      console.log(changes.data);
       changes.data.currentValue.forEach((el: any) => {
         labels.push(el.name)
       })

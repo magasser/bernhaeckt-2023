@@ -12,7 +12,8 @@
             <app-visualization-filter (filterDataEvent)="updateFilteredData($event)"></app-visualization-filter>
             <div>
                 <app-visualization-table-result *ngIf="config.showTable" [data]="filteredData"></app-visualization-table-result>
-                <app-visualization-chart-result [data]="filteredData"></app-visualization-chart-result>
+                <app-visualization-table-matrix-result *ngIf="config.showMatrix" [data]="filteredData"></app-visualization-table-matrix-result>
+                <app-visualization-chart-result [data]="filteredData" *ngIf="config.showChart"></app-visualization-chart-result>
             </div>
         </div>
     </mat-expansion-panel>
