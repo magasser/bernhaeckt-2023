@@ -1,0 +1,29 @@
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+    <ng-container matColumnDef="dimension">
+        <th mat-header-cell *matHeaderCellDef> Dimension </th>
+        <td mat-cell *matCellDef="let element"> {{element.dimension}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="topic">
+        <th mat-header-cell *matHeaderCellDef> Thema </th>
+        <td mat-cell *matCellDef="let element"> {{element.topic}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="indicator">
+        <th mat-header-cell *matHeaderCellDef> Indikator </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="county">
+        <th mat-header-cell *matHeaderCellDef> Gemeinde </th>
+        <td mat-cell *matCellDef="let element"> {{element.county}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef> Wert </th>
+        <td mat-cell *matCellDef="let element"> {{element.calculated_value}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

@@ -39,7 +39,7 @@ public class CountyControllerImpl implements CountyController {
     }
 
     @Override
-    public CountyData getCountyDataById(UUID id) {
+    public List<CountyData> getCountyDataById(UUID id) {
         return this.countyDataService.getCountyDataById(id);
     }
 
