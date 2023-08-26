@@ -11,7 +11,8 @@
         <div>
             <app-visualization-filter (filterDataEvent)="updateFilteredData($event)"></app-visualization-filter>
             <div>
-                <app-visualization-table-result [data]="filteredData"></app-visualization-table-result>
+                <app-visualization-table-result *ngIf="config.showTable" [data]="filteredData"></app-visualization-table-result>
+                <app-visualization-chart-result [data]="filteredData"></app-visualization-chart-result>
             </div>
         </div>
     </mat-expansion-panel>
