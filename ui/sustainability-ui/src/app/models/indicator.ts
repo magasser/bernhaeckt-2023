@@ -1,17 +1,13 @@
-export class County {
-  dimension: string;
-  topic: string;
-  indicator: number;
-  value: string;
-  rating: string;
-  source: string;
+export class Indicator {
+  name: string;
+  comment: string;
+  unit: string;
+  topicId: string;
 
-  constructor(dimension: string, topic: string, indicator: number, value: string, rating: string, source: string) {
-    this.dimension = dimension;
-    this.topic = topic;
-    this.indicator = indicator;
-    this.value = value;
-    this.rating = rating;
-    this.source = source;
+  constructor(name: string, comment: string, unit: string, topicId: string) {
+    this.name = name;
+    this.comment = comment;
+    this.unit = unit;
+    this.topicId = topicId;
   }
 }
