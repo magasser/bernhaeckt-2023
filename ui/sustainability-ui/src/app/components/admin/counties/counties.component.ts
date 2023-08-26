@@ -1,7 +1,5 @@
-import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription, firstValueFrom } from 'rxjs';
-import { County } from 'src/app/models/county';
+import { firstValueFrom } from 'rxjs';
 import { CountyService } from 'src/app/services/county.service';
 
 export interface CountyData {
