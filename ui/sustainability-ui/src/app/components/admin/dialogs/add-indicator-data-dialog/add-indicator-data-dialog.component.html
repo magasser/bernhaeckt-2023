@@ -6,9 +6,11 @@
             <mat-option *ngFor="let indicator of data.indicators" value="indicator">{{indicator.name}}</mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field>
-        <mat-label i18n>Indicator Source</mat-label>
-        <input matInput [(ngModel)]="data.source">
+    <mat-form-field class="form-field">
+        <mat-label i18n>Source</mat-label>
+        <mat-select [(value)]="data.source">
+            <mat-option *ngFor="let source of data.sources" value="source">{{source.title}}</mat-option>
+        </mat-select>
     </mat-form-field>
     <mat-form-field>
         <mat-label i18n>Indicator Value</mat-label>

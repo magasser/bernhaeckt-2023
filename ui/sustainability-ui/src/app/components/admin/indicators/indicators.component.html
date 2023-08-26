@@ -1,6 +1,6 @@
 <button class="add-button" color="primary" mat-fab extended i18n (click)="openIndicationModal()">
   <mat-icon>add</mat-icon>
-  Add County
+  Add Indicator
 </button>
 <table class="county-table" mat-table [dataSource]="dataSource">
   <ng-container matColumnDef="name">
@@ -23,8 +23,8 @@
   <ng-container matColumnDef="details">
     <th mat-header-cell *matHeaderCellDef>Details</th>
     <td mat-cell *matCellDef="let indicator">
-      <a [routerLink]="[indicator.id]">
-        <mat-icon>arrow_right_alt</mat-icon>
+      <a class="arrow-icon" [routerLink]="['/admin/indicator', indicator.id]">
+          <mat-icon color="primary">arrow_forward</mat-icon>
       </a>
     </td>
   </ng-container>
