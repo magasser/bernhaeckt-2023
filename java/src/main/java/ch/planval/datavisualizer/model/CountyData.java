@@ -6,7 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -28,8 +27,10 @@ public class CountyData {
     private String dimension;
     private UUID indicator_id;
     private UUID county_id;
+    private UUID source_id;
     private String county;
     private int zip;
     private double raw_value;
     private int calculated_value;
+    private String source_title;
 }

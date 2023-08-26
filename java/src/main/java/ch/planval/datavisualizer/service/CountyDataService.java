@@ -27,4 +27,12 @@ public class CountyDataService {
         return this.countyDataRepository.findAll();
     }
 
+    public void updateCountyData(final CountyData data) {
+        CountyData oldCounty = this.countyDataRepository.findById(data.getData_id()).orElseThrow();
+
+        this.countyDataRepository.delete(oldCounty);
+
+        this.countyDataRepository.save(data);
+    }
+
 }

@@ -33,6 +33,7 @@ import { CountyComponent } from './pages/county/county.component';
 import { CountyIndicatorModifyDialogComponent } from './components/admin/dialogs/county-indicator-modify-dialog/county-indicator-modify-dialog.component';
 import { AddIndicatorDataDialogComponent } from './components/admin/dialogs/add-indicator-data-dialog/add-indicator-data-dialog.component';
 import { VisualizationTableResultComponent } from './components/visualizer/visualization-table-result/visualization-table-result.component';
+import { SourceComponent } from './models/source/source.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { VisualizationTableResultComponent } from './components/visualizer/visua
     CountyComponent,
     CountyIndicatorModifyDialogComponent,
     AddIndicatorDataDialogComponent,
-    VisualizationTableResultComponent
+    VisualizationTableResultComponent,
+    SourceComponent
   ],
   imports: [
     BrowserModule,
