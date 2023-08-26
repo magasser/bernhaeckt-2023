@@ -1,0 +1,23 @@
+<h1 mat-dialog-title class="dialog-title" i18n>Add Indication</h1>
+<div mat-dialog-content>
+    <mat-form-field class="form-field">
+      <mat-label i18n>Name</mat-label>
+      <input matInput [(ngModel)]="indicator.name">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label i18n>Comment</mat-label>
+      <input matInput [(ngModel)]="indicator.comment">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label i18n>Unit</mat-label>
+      <input matInput [(ngModel)]="indicator.unit">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label i18n>TopicId</mat-label>
+      <input matInput [(ngModel)]="indicator.topicId">
+    </mat-form-field>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="secondary" (click)="onCancel()" i18n>Cancel</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="indicator" cdkFocusInitial i18n>Add</button>
+    </div>
+</div>

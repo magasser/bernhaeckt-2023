@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { firstValueFrom } from 'rxjs';
 import { CountyService } from 'src/app/services/county.service';
-import { AddCountyDialogComponent } from '../add-county-dialog/add-county-dialog.component';
+import { AddCountyDialogComponent } from '../dialogs/add-county-dialog/add-county-dialog.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { County } from 'src/app/models/county';
 

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {firstValueFrom} from "rxjs";
 import {IndicatorService} from "../../../services/indicator.service";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatDialog} from "@angular/material/dialog";
+import {AddIndicatorDialogComponent} from "../add-indicator-dialog/add-indicator-dialog.component";
 
 export interface CountyData {
   id: string;
@@ -21,9 +23,29 @@ export class IndicatorsComponent {
   public indicatorData: CountyData[];
   public dataSource: MatTableDataSource<CountyData>;
 
-  constructor(private indicatorService: IndicatorService) {
+  constructor(private indicatorService: IndicatorService, public dialog: MatDialog) {
     this.indicatorData = [];
     this.dataSource = new MatTableDataSource<CountyData>([]);
+  }
+
+  public openIndicationModal(): void {
+    const dialogRef = this.dialog.open(AddIndicatorDialogComponent, {
+      data: { name: '', zip: 0},
+    });
+
+    dialogRef.afterClosed().subscribe(async (result) => {
+      if (!result) {
+        return;
+      }
+
+      this.indicatorService.saveIndicator(result);
+
+      await this.refreshIndicators();
+    });
+  }
+
+  private async refreshIndicators(): Promise<void> {
+    this.dataSource.data = await firstValueFrom(this.indicatorService.getIndicators());
   }
 
   async ngOnInit(): Promise<void> {

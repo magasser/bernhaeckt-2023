@@ -1,1 +1,44 @@
-<p>county works!</p>
+<app-header></app-header>
+<button class="add-button" color="primary" mat-fab (click)="openAddIndicatorDialog()" extended i18n>
+    <mat-icon>add</mat-icon>
+    Add Indicator Data
+</button>
+<div class="table-container">
+    <table class="indicator-table" mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef i18n>Name</th>
+            <td mat-cell *matCellDef="let indicator">{{indicator.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="dimension">
+            <th mat-header-cell *matHeaderCellDef i18n>Name</th>
+            <td mat-cell *matCellDef="let indicator">{{indicator.dimension}}</td>
+        </ng-container>
+        <ng-container matColumnDef="topic">
+            <th mat-header-cell *matHeaderCellDef i18n>Topic</th>
+            <td mat-cell *matCellDef="let indicator">{{indicator.topic}}</td>
+        </ng-container>
+        <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef i18n>Value</th>
+            <td mat-cell *matCellDef="let indicator">{{indicator.raw_value}} {{indicator.unit}}</td>
+        </ng-container>
+        <ng-container matColumnDef="rating">
+            <th mat-header-cell *matHeaderCellDef i18n>Rating</th>
+            <td mat-cell *matCellDef="let indicator">{{indicator.calculated_value}}</td>
+        </ng-container>        
+        <ng-container matColumnDef="source">
+            <th mat-header-cell *matHeaderCellDef i18n>Source</th>
+            <td mat-cell *matCellDef="let indicator">{{indicator.source}}</td>
+        </ng-container>
+        <ng-container matColumnDef="modify">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let indicator">
+                <button mat-icon-button class="edit-icon" color="primary" (click)="openCountyIndicatorModifyDialog()">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
