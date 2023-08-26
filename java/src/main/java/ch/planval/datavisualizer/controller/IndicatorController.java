@@ -49,5 +49,4 @@ public interface IndicatorController {
     @RequestMapping(path = "/indicators", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     @PutMapping("/")
     void updateIndicator(Indicator indicator);
-
 }

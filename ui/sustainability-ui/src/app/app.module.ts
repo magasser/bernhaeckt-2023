@@ -30,6 +30,7 @@ import {NgFor} from "@angular/common";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { VisualizationFilterComponent } from './components/visualizer/visualization-filter/visualization-filter.component';
 import { CountyComponent } from './pages/county/county.component';
+import {AddIndicatorDialogComponent} from "./components/admin/add-indicator-dialog/add-indicator-dialog.component";
 
 @NgModule({
   declarations: [
@@ -44,14 +45,15 @@ import { CountyComponent } from './pages/county/county.component';
     AddCountyDialogComponent,
     VisualizationRowComponent,
     VisualizationFilterComponent,
-    CountyComponent
+    CountyComponent,
+    AddIndicatorDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ChartModule,
     PanelModule,
-    MatFormFieldModule, 
+    MatFormFieldModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
@@ -59,8 +61,8 @@ import { CountyComponent } from './pages/county/county.component';
     MatIconModule,
     MatTableModule,
     MatButtonModule,
-    MatDialogModule, 
-    MatInputModule, 
+    MatDialogModule,
+    MatInputModule,
     FormsModule,
     MatExpansionModule,
     MatSelectModule,

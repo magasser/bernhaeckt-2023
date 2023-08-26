@@ -1,0 +1,16 @@
+.add-button {
+  height: 2.5rem;
+  margin: 2rem;
+}
+
+.table-container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  .county-table {
+    .arrow-icon {
+      :hover {
+        color: lighten(teal, 20%);
+      }
+    }
+  }
+}
