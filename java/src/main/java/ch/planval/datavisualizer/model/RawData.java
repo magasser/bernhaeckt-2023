@@ -27,7 +27,7 @@ public class RawData {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private UUID indicatorId;
-    private int value;
+    private double value;
     private UUID sourceId;
     private UUID countyId;
 }
