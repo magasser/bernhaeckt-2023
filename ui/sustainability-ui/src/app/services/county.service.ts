@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { County } from '../models/county';
-import { Observable, catchError, map, throwError } from 'rxjs';
+import {Observable, catchError, map, throwError, Subscription} from 'rxjs';
 import {CountyData} from "../models/countyData";
 
 @Injectable({
@@ -46,16 +46,16 @@ export class CountyService {
     );
   }
 
-  public saveCounty(county: County): void {
+  public saveCounty(county: County): Observable<County> {
     const url = `${this.baseUrl}/county`;
 
-    this.http.post<County>(url, county, { headers: this.headers}).subscribe({error: this.handleError});
+    return this.http.post<County>(url, county, { headers: this.headers});
   }
 
-  public updateCountyData(data: CountyData): void {
+  public updateCountyData(data: CountyData): Observable<CountyData> {
     const url = `${this.baseUrl}/counties/data`;
 
-    this.http.put<CountyData>(url, data, { headers: this.headers }).subscribe({error: this.handleError});
+    return this.http.put<CountyData>(url, data, { headers: this.headers });
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {

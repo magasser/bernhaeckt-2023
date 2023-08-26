@@ -38,9 +38,9 @@ export class IndicatorsComponent {
         return;
       }
 
-      this.indicatorService.saveIndicator(result);
-
-      await this.refreshIndicators();
+      this.indicatorService.saveIndicator(result).subscribe((next) => {
+        this.refreshIndicators();
+      });
     });
   }
 
