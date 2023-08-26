@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {CountyService} from "../../services/county.service";
-import {CountyData} from "../../models/countyData";
 import {ItemType} from "../../components/visualizer/visualization-row/item-type";
 
 @Component({
