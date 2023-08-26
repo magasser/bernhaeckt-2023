@@ -31,6 +31,7 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { VisualizationFilterComponent } from './components/visualizer/visualization-filter/visualization-filter.component';
 import { CountyComponent } from './pages/county/county.component';
 import { VisualizationTableResultComponent } from './components/visualizer/visualization-table-result/visualization-table-result.component';
+import { VisualizationTableMatrixResultComponent } from './components/visualizer/visualization-table-matrix-result/visualization-table-matrix-result.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { VisualizationTableResultComponent } from './components/visualizer/visua
     VisualizationRowComponent,
     VisualizationFilterComponent,
     CountyComponent,
-    VisualizationTableResultComponent
+    VisualizationTableResultComponent,
+    VisualizationTableMatrixResultComponent
   ],
   imports: [
     BrowserModule,
