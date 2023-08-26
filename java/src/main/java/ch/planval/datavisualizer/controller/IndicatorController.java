@@ -36,4 +36,9 @@ public interface IndicatorController {
     @PostMapping("/")
     void saveIndicator(@RequestBody Indicator indicator);
 
+
+    @RequestMapping(path = "/indicators", method = RequestMethod.GET)
+    @GetMapping("/")
+    List<Indicator> getAllIndicators();
+
 }

@@ -43,6 +43,11 @@ public class IndicatorControllerImpl implements IndicatorController {
     }
 
     @Override
+    public List<Indicator> getAllIndicators() {
+        return this.indicatorService.getAllIndicators();
+    }
+
+    @Override
     public void saveIndicator(Indicator indicator) {
         this.indicatorService.saveIndicator(indicator);
     }

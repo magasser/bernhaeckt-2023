@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {CountyService} from "../../../services/county.service";
 import {firstValueFrom} from "rxjs";
+import {IndicatorService} from "../../../services/indicator.service";
 export interface Indicator {
   dimension: string;
   topic: string;
@@ -22,23 +23,23 @@ export class IndicatorsComponent {
   public displayedColumns: string[] = ['dimension', 'topic', 'indicator', 'value', 'rating', 'source'];
   public indicatorData: Indicator[];
 
-  constructor(private countyService: CountyService) {
+  constructor(private indicatorService: IndicatorService) {
     this.indicatorData = [];
   }
 
   async ngOnInit(): Promise<void> {
     this.indicatorData = [];
 
-    const counties = await firstValueFrom(this.countyService.getCounties());
+    const indicators = await firstValueFrom(this.indicatorService.getIndicators());
 
-    counties.forEach(county => {
+    indicators.forEach(indicator => {
       this.indicatorData.push({
-        dimension: county.id,
-        topic: county.name,
-        indicator: county.zip,
-        value: county.name,
-        rating: '1',
-        source: 'google.com'
+        dimension: indicator.dimension,
+        topic: indicator.topic,
+        indicator: indicator.indicator,
+        value: indicator.value,
+        rating: indicator.rating,
+        source: indicator.source
       });
     });
   }
