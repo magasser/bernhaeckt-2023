@@ -1,7 +1,8 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, throwError } from 'rxjs';
-import {Indicator} from "../components/admin/indicators/indicators.component";
+import {CountyData} from "../components/admin/indicators/indicators.component";
+import {Indicator} from "../models/indicator";
 
 @Injectable({
   providedIn: 'root'
