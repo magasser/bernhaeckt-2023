@@ -42,4 +42,8 @@ public interface CountyController {
     @RequestMapping(path = "/county", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping("/")
     void saveCounty(@RequestBody County county);
+
+    @RequestMapping(path = "/counties/data", method = RequestMethod.GET)
+    @GetMapping("/")
+    List<CountyData> getAllCountiesData();
 }

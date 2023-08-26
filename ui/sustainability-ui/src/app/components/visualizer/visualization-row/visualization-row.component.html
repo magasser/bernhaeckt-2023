@@ -1,0 +1,15 @@
+<div class="row">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{config.title}}
+            </mat-panel-title>
+            <mat-panel-description *ngIf="config.description">
+                {{config.description}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div>
+            <app-visualization-filter></app-visualization-filter>
+        </div>
+    </mat-expansion-panel>
+</div>

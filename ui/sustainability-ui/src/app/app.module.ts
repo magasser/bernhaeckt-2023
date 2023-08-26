@@ -19,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {HeaderComponent} from "./components/header/header.component";
 import {DataEvaluationComponent} from "./pages/data-evaluation/data-evaluation.component";
+import { VisualizationRowComponent } from './components/visualizer/visualization-row/visualization-row.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import { VisualizationFilterComponent } from './components/visualizer/visualization-filter/visualization-filter.component';
 
 @NgModule({
   declarations: [
@@ -29,21 +32,24 @@ import {DataEvaluationComponent} from "./pages/data-evaluation/data-evaluation.c
     CountiesComponent,
     IndicatorsComponent,
     HeaderComponent,
-    DataEvaluationComponent
+    DataEvaluationComponent,
+    VisualizationRowComponent,
+    VisualizationFilterComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ChartModule,
-    PanelModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatTabsModule,
-    MatIconModule,
-    MatTableModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ChartModule,
+        PanelModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatToolbarModule,
+        MatTabsModule,
+        MatIconModule,
+        MatTableModule,
+        MatButtonModule,
+        MatExpansionModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -52,6 +52,11 @@ public class CountyControllerImpl implements CountyController {
     }
 
     @Override
+    public List<CountyData> getAllCountiesData() {
+        return this.countyDataService.getAllCounties();
+    }
+
+    @Override
     public void saveCounty(County county) {
         this.countyService.saveCounty(county);
     }
