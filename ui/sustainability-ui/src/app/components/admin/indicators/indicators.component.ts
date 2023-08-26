@@ -4,6 +4,7 @@ import {IndicatorService} from "../../../services/indicator.service";
 import {MatTableDataSource} from "@angular/material/table";
 
 export interface CountyData {
+  id: string;
   name: string;
   comment: string;
   unit: string;
@@ -16,7 +17,7 @@ export interface CountyData {
   styleUrls: ['./indicators.component.scss']
 })
 export class IndicatorsComponent {
-  public displayedColumns: string[] = ['name', 'comment', 'unit', 'topic'];
+  public displayedColumns: string[] = ['name', 'comment', 'unit', 'topic', 'details'];
   public indicatorData: CountyData[];
   public dataSource: MatTableDataSource<CountyData>;
 
@@ -32,6 +33,7 @@ export class IndicatorsComponent {
 
     indicators.forEach(indicator => {
       this.indicatorData.push({
+        id: indicator.id,
         name: indicator.name,
         comment: indicator.comment,
         unit: indicator.unit,
