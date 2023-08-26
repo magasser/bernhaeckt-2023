@@ -4,6 +4,10 @@
   "newProjectRoot": "projects",
   "projects": {
     "sustainability-ui": {
+      "i18n": {
+          "sourceLocale": "en-US",
+          "locales": { "de-CH": "src/locale/messages.de.xlf" }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": [ "de-CH" ],
             "outputPath": "dist/sustainability-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -95,7 +100,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/chart.js/dist/chart.js"
+            ]
           }
         }
       }
