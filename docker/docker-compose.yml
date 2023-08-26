@@ -21,4 +21,17 @@ services:
     volumes:
       - ../ui/sustainability-ui:/project
       - /project/node_modules
+  backend:
+    container_name: backend
+    build:
+      context: ../java
+      target: compileStage
+    ports:
+      - "1337:1337"
+    expose:
+      - "1337"
+    depends_on:
+      - database
+    environment:
+      - HOST=host.docker.internal
   
