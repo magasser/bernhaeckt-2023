@@ -9,7 +9,7 @@ import {CountyData} from "../models/countyData";
 })
 export class CountyService {
   private baseUrl: string = 'http://localhost:1337/api';
-  private headers = new HttpHeaders().set('Content-Type', 'application/json');
+  private headers = new HttpHeaders().set('Content-Type', 'application/json').set('Access-Control-Allow-Origin', '*');
 
   constructor(private http: HttpClient) { }
 

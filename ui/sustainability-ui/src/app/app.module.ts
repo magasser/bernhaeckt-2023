@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DataVisualizerComponent } from './pages/data-visualizer/data-visualizer.component';
@@ -19,6 +18,11 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
 import {HeaderComponent} from "./components/header/header.component";
 import {DataEvaluationComponent} from "./pages/data-evaluation/data-evaluation.component";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddCountyDialogComponent } from './components/admin/add-county-dialog/add-county-dialog.component';
 import { VisualizationRowComponent } from './components/visualizer/visualization-row/visualization-row.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import { VisualizationFilterComponent } from './components/visualizer/visualization-filter/visualization-filter.component';
@@ -33,23 +37,28 @@ import { VisualizationFilterComponent } from './components/visualizer/visualizat
     IndicatorsComponent,
     HeaderComponent,
     DataEvaluationComponent,
+    AddCountyDialogComponent,
     VisualizationRowComponent,
     VisualizationFilterComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ChartModule,
-        PanelModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        MatToolbarModule,
-        MatTabsModule,
-        MatIconModule,
-        MatTableModule,
-        MatButtonModule,
-        MatExpansionModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ChartModule,
+    PanelModule,
+    MatFormFieldModule, 
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatIconModule,
+    MatTableModule,
+    MatButtonModule,
+    MatDialogModule, 
+    MatInputModule, 
+    FormsModule,
+    MatExpansionModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
