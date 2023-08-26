@@ -1,1 +1,26 @@
-<p>visualization-filter works!</p>
+<div class="filters">
+    <mat-form-field class="filter">
+        <mat-label>Gemeinde</mat-label>
+        <mat-select [formControl]="counties" multiple (selectionChange)="updateFilter()" id="blub">
+            <mat-option *ngFor="let county of countyList" [value]="county">{{county}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter">
+        <mat-label>Dimension</mat-label>
+        <mat-select [formControl]="dimensions" multiple (selectionChange)="updateFilter()">
+            <mat-option *ngFor="let dimension of dimensionList" [value]="dimension">{{dimension}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter">
+        <mat-label>Thema</mat-label>
+        <mat-select [formControl]="topics" multiple (selectionChange)="updateFilter()">
+            <mat-option *ngFor="let topic of topicList" [value]="topic">{{topic}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="filter indicator">
+        <mat-label>Indikator</mat-label>
+        <mat-select [formControl]="indicators" multiple (selectionChange)="updateFilter()">
+            <mat-option *ngFor="let indicator of indicatorList" [value]="indicator">{{indicator}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
