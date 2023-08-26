@@ -29,7 +29,7 @@ export class CountyComponent implements OnInit {
 
   constructor(private countyService: CountyService, private indicatorService: IndicatorService, private sourceService: SourceService, private rawDataService: RawDataService, private route: ActivatedRoute, public dialog: MatDialog) {
     this.id = '';
-    this.dataSource = new MatTableDataSource<CountyData>();
+    this.dataSource = new MatTableDataSource<CountyData>([]);
     this.indicators = [];
     this.sources = [];
   }
@@ -54,10 +54,10 @@ export class CountyComponent implements OnInit {
       }
 
       const rawData = new RawData('', result.indicator.id, result.value, result.source.id, this.id);
-  
-      this.rawDataService.saveRawData(rawData);
-  
-      await this.refreshCountyData();
+
+      this.rawDataService.saveRawData(rawData).subscribe((next) => {
+        this.refreshCountyData();
+      });
     });
   }
 
@@ -75,9 +75,8 @@ export class CountyComponent implements OnInit {
       data.source_id = result.source.id;
       data.source_title = result.source.title;
 
-      this.countyService.updateCountyData(data);
-
-      await this.refreshCountyData();
+      this.countyService.updateCountyData(data).subscribe(
+          (next) => this.refreshCountyData());
     });
   }
 
