@@ -19,8 +19,8 @@ public class CountyDataService {
         this.countyDataRepository = countyDataRepository;
     }
 
-    public CountyData getCountyDataById(final UUID id) {
-        return this.countyDataRepository.findById(id).orElse(null);
+    public List<CountyData> getCountyDataById(final UUID id) {
+        return this.countyDataRepository.findByCountyId(id).orElse(null);
     }
 
     public List<CountyData> getAllCounties() {

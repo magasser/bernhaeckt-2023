@@ -30,6 +30,7 @@ import {NgFor} from "@angular/common";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { VisualizationFilterComponent } from './components/visualizer/visualization-filter/visualization-filter.component';
 import { CountyComponent } from './pages/county/county.component';
+import { VisualizationTableResultComponent } from './components/visualizer/visualization-table-result/visualization-table-result.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CountyComponent } from './pages/county/county.component';
     AddCountyDialogComponent,
     VisualizationRowComponent,
     VisualizationFilterComponent,
-    CountyComponent
+    CountyComponent,
+    VisualizationTableResultComponent
   ],
   imports: [
     BrowserModule,

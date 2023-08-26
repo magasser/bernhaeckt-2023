@@ -29,7 +29,7 @@ public interface CountyController {
 
     @RequestMapping(path = "/counties/{id}/data", method = RequestMethod.GET)
     @GetMapping("/")
-    CountyData getCountyDataById(@PathVariable(name="id") UUID id);
+    List<CountyData> getCountyDataById(@PathVariable(name="id") UUID id);
 
     @RequestMapping(path = "/counties", method = RequestMethod.GET)
     @GetMapping("/")
