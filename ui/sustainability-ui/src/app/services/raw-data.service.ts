@@ -12,10 +12,10 @@ export class RawDataService {
 
   constructor(private http: HttpClient) { }
 
-  public saveRawData(rawData: RawData): void {
+  public saveRawData(rawData: RawData): Observable<RawData> {
     const url = `${this.baseUrl}/rawdata`;
 
-    this.http.post<RawData>(url, rawData, { headers: this.headers}).subscribe({error: this.handleError});
+    return this.http.post<RawData>(url, rawData, { headers: this.headers});
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {

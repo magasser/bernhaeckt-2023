@@ -24,10 +24,10 @@ export class IndicatorService {
     );
   }
 
-  public saveIndicator(indicator: Indicator): void {
+  public saveIndicator(indicator: Indicator): Observable<County> {
     const url = `${this.baseUrl}/indicators`;
 
-    this.http.post<County>(url, indicator, { headers: this.headers}).subscribe({error: this.handleError});
+    return this.http.post<County>(url, indicator, { headers: this.headers});
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {
