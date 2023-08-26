@@ -71,11 +71,9 @@ export class CountyComponent implements OnInit {
         return;
       }
 
-      data.raw_value = result.value;
-      data.source_id = result.source?.id;
-      data.source_title = result.source?.title;
+      const rawData = new RawData(data.data_id, data.indicator_id, result.value, result.source?.id, result.source?.title);
 
-      this.countyService.updateCountyData(data).subscribe(
+      this.rawDataService.updateRawData(rawData).subscribe(
           (next) => this.refreshCountyData());
     });
   }

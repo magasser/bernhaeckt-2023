@@ -1,6 +1,4 @@
 import {Component, Input, OnChanges} from '@angular/core';
-import {CountyData} from "../../../models/countyData";
-import {Indicator} from "../../../models/indicator";
 
 @Component({
   selector: 'app-visualization-chart-result',
@@ -12,7 +10,7 @@ export class VisualizationChartResultComponent implements OnChanges{
   data: any;
 
   calculatedData: any = [];
-  colors = ['blue','red','orange','green','purple','black']
+  colors = ['blue','red','orange','green','purple','black'];
 
   ngOnChanges(changes: any) {
     let labels: string[] = [];
@@ -25,10 +23,9 @@ export class VisualizationChartResultComponent implements OnChanges{
 
       this.data = {
         labels: [...new Set(labels)],
-        datasets: [
-
-        ]
+        datasets: []
       }
+
       let counter = -1;
       counties.forEach(county => {
         let values: any = []
@@ -41,10 +38,12 @@ export class VisualizationChartResultComponent implements OnChanges{
         this.data.datasets.push({
           label: county,
           data: values,
+          fill: true,
           borderColor: this.colors[counter],
           backgroundColor: 'transparent',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'lightgreen',
+          spanGaps: true
         })
       });
     }

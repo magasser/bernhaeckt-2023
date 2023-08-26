@@ -52,12 +52,6 @@ export class CountyService {
     return this.http.post<County>(url, county, { headers: this.headers});
   }
 
-  public updateCountyData(data: CountyData): Observable<CountyData> {
-    const url = `${this.baseUrl}/counties/data`;
-
-    return this.http.put<CountyData>(url, data, { headers: this.headers });
-  }
-
   private handleError(error: HttpErrorResponse): Observable<never> {
     const msg = error.error instanceof ErrorEvent
     ? error.error.message

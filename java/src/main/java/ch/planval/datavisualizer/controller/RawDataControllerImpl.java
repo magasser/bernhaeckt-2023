@@ -1,5 +1,6 @@
 package ch.planval.datavisualizer.controller;
 
+import ch.planval.datavisualizer.model.CountyData;
 import ch.planval.datavisualizer.model.RawData;
 import ch.planval.datavisualizer.service.RawDataService;
 import lombok.extern.slf4j.Slf4j;
@@ -23,5 +24,10 @@ public class RawDataControllerImpl implements RawDataController {
     @Override
     public void saveRawData(final RawData rawData) {
         this.rawDataService.saveRawData(rawData);
+    }
+
+    @Override
+    public void updateRawData(final RawData data) {
+        this.rawDataService.updateRawData(data);
     }
 }
