@@ -1,26 +1,21 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, throwError } from 'rxjs';
-import { Source } from '../models/source';
+import { Observable, throwError } from 'rxjs';
+import { RawData } from '../models/raw-data';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SourceService {
+export class RawDataService {
   private baseUrl: string = 'http://localhost:1337/api';
   private headers = new HttpHeaders().set('Content-Type', 'application/json').set('Access-Control-Allow-Origin', '*');
 
   constructor(private http: HttpClient) { }
 
-  public getSources(): Observable<Source[]> {
-    const url = `${this.baseUrl}/sources`;
+  public saveRawData(rawData: RawData): void {
+    const url = `${this.baseUrl}/rawdata`;
 
-    return this.http.get<Source[]>(url, { headers: this.headers}).pipe(
-      map((res) => {
-        return res || [];
-      }),
-      catchError(this.handleError)
-    );
+    this.http.post<RawData>(url, rawData, { headers: this.headers}).subscribe({error: this.handleError});
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {

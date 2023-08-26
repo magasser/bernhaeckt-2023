@@ -1,11 +1,13 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Indicator } from 'src/app/models/indicator';
+import { Source } from 'src/app/models/source';
 
 export interface AddIndicatorData {
   indicators: Indicator[];
-  selectedIndicator: Indicator;
-  source: string;
+  indicator: Indicator;
+  sources: Source[];
+  source: Source;
   value: number;
 }
 

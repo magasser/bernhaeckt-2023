@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Slf4j
@@ -32,6 +33,10 @@ public class SourceService {
 
     public Source getSourceById(UUID sourceId) {
         return sourceRepository.findById(sourceId).orElse(null);
+    }
+
+    public List<Source> getAllSources() {
+        return sourceRepository.findAll();
     }
 
     public double getValueBySourceAndCounty(UUID sourceId, UUID countyId) {

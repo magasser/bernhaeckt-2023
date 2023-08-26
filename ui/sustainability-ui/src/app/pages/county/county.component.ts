@@ -7,8 +7,11 @@ import { AddIndicatorDataDialogComponent } from 'src/app/components/admin/dialog
 import { CountyIndicatorModifyDialogComponent } from 'src/app/components/admin/dialogs/county-indicator-modify-dialog/county-indicator-modify-dialog.component';
 import { CountyData } from 'src/app/models/countyData';
 import { Indicator } from 'src/app/models/indicator';
+import { Source } from 'src/app/models/source';
 import { CountyService } from 'src/app/services/county.service';
 import { IndicatorService } from 'src/app/services/indicator.service';
+import { RawDataService } from 'src/app/services/raw-data.service';
+import { SourceService } from 'src/app/services/source.service';
 
 @Component({
   selector: 'app-county',
@@ -20,10 +23,10 @@ export class CountyComponent implements OnInit {
   public dataSource: MatTableDataSource<CountyData>;
 
   private id: string;
-  private sources: [];
+  private sources: Source[];
   private indicators: Indicator[];
 
-  constructor(private countyService: CountyService, private indicatorService: IndicatorService, private route: ActivatedRoute, public dialog: MatDialog) {
+  constructor(private countyService: CountyService, private indicatorService: IndicatorService, private sourceService: SourceService, private rawDataService: RawDataService, private route: ActivatedRoute, public dialog: MatDialog) {
     this.id = '';
     this.dataSource = new MatTableDataSource<CountyData>();
     this.indicators = [];
@@ -34,25 +37,26 @@ export class CountyComponent implements OnInit {
       this.id = this.route.snapshot.paramMap.get('id') ?? '';
 
       this.indicators = await firstValueFrom(this.indicatorService.getIndicators());
+      this.sources = await firstValueFrom(this.sourceService.getSources());
 
       await this.refreshCountyData();
   }
 
   public async openAddIndicatorDialog(): Promise<void> {
     const dialogRef = this.dialog.open(AddIndicatorDataDialogComponent, {
-      data: { indicators: this.indicators, selectedIndicator: null, source: '', value: 0 }
+      data: { indicators: this.indicators, indicator: null, sources: this.sources, source: null, value: 0 }
     });
 
     dialogRef.afterClosed().subscribe(async (result) => {
       if (!result) {
         return;
       }
-    })
+    });
   }
 
   public openCountyIndicatorModifyDialog(data: CountyData): void {
     const dialogRef = this.dialog.open(CountyIndicatorModifyDialogComponent, {
-      data: { value: data.raw_value, source: }
+      data: { value: data.raw_value, sources: this.sources, source: null }
     });
 
     dialogRef.afterClosed().subscribe(async (result) => {
@@ -63,7 +67,7 @@ export class CountyComponent implements OnInit {
 
 
       data.raw_value = result.value;
-      data.source = result.source;
+      //data.source = result.source;
 
       this.countyService.updateCountyData(data);
 
