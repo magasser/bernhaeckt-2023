@@ -54,7 +54,7 @@ export class CountyComponent implements OnInit {
       }
 
       const rawData = new RawData('', result.indicator.id, result.value, result.source.id, this.id);
-  
+
       this.rawDataService.saveRawData(rawData);
   
       await this.refreshCountyData();
