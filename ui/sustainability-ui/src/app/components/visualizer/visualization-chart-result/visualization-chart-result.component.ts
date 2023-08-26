@@ -11,46 +11,43 @@ export class VisualizationChartResultComponent implements OnChanges{
   @Input()
   data: any;
 
+  calculatedData: any = [];
+  colors = ['blue','red','orange','green','purple','black']
+
   ngOnChanges(changes: any) {
     let labels: string[] = [];
     if(changes.data.currentValue.length !== 0) {
+      let counties: Set<string> = new Set;
       changes.data.currentValue.forEach((el: any) => {
-        labels.push(el.name)
-      })
+        labels.push(el.name);
+        counties.add(el.county)
+      });
 
       this.data = {
         labels: [...new Set(labels)],
         datasets: [
-          {
-            label: 'Single Dataset',
-            data: [5,2,3,4],
-            backgroundColor: 'transparent',
-            borderColor: 'blue',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'lightgreen',
-          },
-          {
-            label: 'Single Dataset',
-            data: [4,5,6,7],
-            backgroundColor: 'transparent',
-            borderColor: 'red',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'lightgreen',
-          },
-          {
-            label: 'Single Dataset',
-            data: [7,8,9,3],
-            backgroundColor: 'transparent',
-            borderColor: 'green',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'lightgreen',
-          }
+
         ]
-        //this.data = changes.data.currentValue;
       }
+      let counter = -1;
+      counties.forEach(county => {
+        let values: any = []
+        changes.data.currentValue.forEach((el: any) => {
+          if(el.county === county) {
+            values.push(el.calculated_value);
+          }
+        });
+        counter++;
+        this.data.datasets.push({
+          label: county,
+          data: values,
+          borderColor: this.colors[counter],
+          backgroundColor: 'transparent',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'lightgreen',
+        })
+      });
     }
-
-
   }
 
   getEveryLabelOnce = (labels: string[]): string[] => {

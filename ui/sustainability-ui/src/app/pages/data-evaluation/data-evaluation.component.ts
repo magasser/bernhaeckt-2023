@@ -33,14 +33,14 @@ export class DataEvaluationComponent {
             config: [{type: ItemType.TABLE, weight: 2}]
         },
         {
-            title: 'I Love Tables',
+            title: 'Mehrere Tabellen in einem Tab',
             description: 'Mehrere Male die gleiche Tabelle',
             rows: 2,
             config: [{type: ItemType.TABLE, weight: 2}, {type: ItemType.TABLE, weight: 5}]
         },
         {
-            title: 'AND I LOVE SPIDERS',
-            description: 'Nur zum Spider Diagramm darstellen',
+            title: 'Vergleich verschiedener Gemeinden',
+            description: 'Spider Diagram',
             config: [{type: ItemType.SPIDER_CHART, weight: 2}]
         }
     ];
