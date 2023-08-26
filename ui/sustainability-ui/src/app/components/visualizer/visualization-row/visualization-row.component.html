@@ -9,7 +9,10 @@
             </mat-panel-description>
         </mat-expansion-panel-header>
         <div>
-            <app-visualization-filter></app-visualization-filter>
+            <app-visualization-filter (filterDataEvent)="updateFilteredData($event)"></app-visualization-filter>
+            <div>
+                {{filteredData}}
+            </div>
         </div>
     </mat-expansion-panel>
 </div>

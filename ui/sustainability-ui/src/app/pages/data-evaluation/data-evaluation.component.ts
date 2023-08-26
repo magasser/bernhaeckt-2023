@@ -15,23 +15,4 @@ export class DataEvaluationComponent {
         {title: 'Alle Gemeinden'},
         {title: 'Gemeinden Bern', description: 'Alle Gemeinden im Kanton Bern'}
     ];
-
-    constructor(private countyService: CountyService) {
-    }
-
-    ngOnInit() {
-        this.loadData();
-    }
-
-    data: CountyData[] = [];
-
-
-    loadData() {
-        this.countyService.getCountiesData().subscribe(next => {
-                console.log(next);
-                this.data = next;
-            }
-        )
-    }
-
 }

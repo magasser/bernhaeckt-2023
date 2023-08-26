@@ -20,13 +20,16 @@ import {HeaderComponent} from "./components/header/header.component";
 import {DataEvaluationComponent} from "./pages/data-evaluation/data-evaluation.component";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddCountyDialogComponent } from './components/admin/add-county-dialog/add-county-dialog.component';
 import { VisualizationRowComponent } from './components/visualizer/visualization-row/visualization-row.component';
 import {MatExpansionModule} from "@angular/material/expansion";
+import {MatSelectModule} from "@angular/material/select";
+import {NgFor} from "@angular/common";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { VisualizationFilterComponent } from './components/visualizer/visualization-filter/visualization-filter.component';
-import { CountyComponent } from './components/admin/county/county.component';
+import { CountyComponent } from './pages/county/county.component';
 
 @NgModule({
   declarations: [
@@ -59,9 +62,14 @@ import { CountyComponent } from './components/admin/county/county.component';
     MatDialogModule, 
     MatInputModule, 
     FormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    NgFor,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

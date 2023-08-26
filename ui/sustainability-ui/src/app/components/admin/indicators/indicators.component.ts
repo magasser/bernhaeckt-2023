@@ -23,7 +23,7 @@ export class IndicatorsComponent {
 
   constructor(private indicatorService: IndicatorService) {
     this.indicatorData = [];
-    this.dataSource = new MatTableDataSource<CountyData>();
+    this.dataSource = new MatTableDataSource<CountyData>([]);
   }
 
   async ngOnInit(): Promise<void> {
