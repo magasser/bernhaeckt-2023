@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -46,4 +47,8 @@ public interface CountyController {
     @RequestMapping(path = "/counties/data", method = RequestMethod.GET)
     @GetMapping("/")
     List<CountyData> getAllCountiesData();
+
+    @RequestMapping(path = "/counties/data", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping("/")
+    void updateCountyData(@RequestBody CountyData data);
 }

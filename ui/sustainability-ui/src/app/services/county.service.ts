@@ -35,12 +35,12 @@ export class CountyService {
     );
   }
 
-  public getCountyData(id: string): Observable<CountyData> {
+  public getCountyData(id: string): Observable<CountyData[]> {
     const url = `${this.baseUrl}/counties/${id}/data`;
 
-    return this.http.get<CountyData>(url, { headers: this.headers}).pipe(
+    return this.http.get<CountyData[]>(url, { headers: this.headers}).pipe(
       map((res) => {
-        return res || undefined;
+        return res || [];
       }),
       catchError(this.handleError)
     );
@@ -50,6 +50,12 @@ export class CountyService {
     const url = `${this.baseUrl}/county`;
 
     this.http.post<County>(url, county, { headers: this.headers}).subscribe({error: this.handleError});
+  }
+
+  public updateCountyData(data: CountyData): void {
+    const url = `${this.baseUrl}/counties/data`;
+
+    this.http.put<CountyData>(url, data, { headers: this.headers }).subscribe({error: this.handleError});
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {
