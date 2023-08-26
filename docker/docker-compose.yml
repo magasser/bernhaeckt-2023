@@ -21,11 +21,13 @@ services:
     volumes:
       - ../ui/sustainability-ui:/project
       - /project/node_modules
+    depends_on:
+      - backend
   backend:
     container_name: backend
     build:
       context: ../java
-      target: compileStage
+      #target: compileStage
     ports:
       - "1337:1337"
     expose:

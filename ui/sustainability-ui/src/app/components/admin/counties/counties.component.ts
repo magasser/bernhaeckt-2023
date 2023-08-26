@@ -20,17 +20,15 @@ const TEST: CountyData[] = [
   templateUrl: './counties.component.html',
   styleUrls: ['./counties.component.scss']
 })
-export class CountiesComponent /*implements OnInit*/ {
-  public dataSource = [...TEST];
-
-  private countyData: CountyData[];
+export class CountiesComponent implements OnInit {
+  public displayedColumns: string[] = ['name', 'zip', 'details'];
+  public countyData: CountyData[];
 
   constructor(private countyService: CountyService) {
     this.countyData = [];
-    //this.dataSource = [{id: 'test', name: 'county', zip: 1234, url: 'asdfs'}];
   }
 
-  /*async ngOnInit(): Promise<void> {
+  async ngOnInit(): Promise<void> {
     this.countyData = [];
 
     const counties = await firstValueFrom(this.countyService.getCounties());
@@ -38,7 +36,5 @@ export class CountiesComponent /*implements OnInit*/ {
     counties.forEach(county => {
       this.countyData.push({id: county.id, name: county.name, zip: county.zip, url: `/admin/county/${county.id}`});
     });
-
-    //this.dataSource.setData(this.countyData);
-  }*/
+  }
 }
