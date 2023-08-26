@@ -15,7 +15,7 @@
         <ng-container matColumnDef="details">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let county">
-                <a class="arrow-icon" [routerLink]="[county.url]">
+                <a class="arrow-icon" [routerLink]="['/admin/county', county.id]">
                     <mat-icon color="primary">arrow_forward</mat-icon>
                 </a>
             </td>
