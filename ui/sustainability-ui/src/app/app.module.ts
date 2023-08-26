@@ -26,7 +26,7 @@ import { AddCountyDialogComponent } from './components/admin/add-county-dialog/a
 import { VisualizationRowComponent } from './components/visualizer/visualization-row/visualization-row.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import { VisualizationFilterComponent } from './components/visualizer/visualization-filter/visualization-filter.component';
-import { CountyComponent } from './components/admin/county/county.component';
+import { CountyComponent } from './pages/county/county.component';
 
 @NgModule({
   declarations: [
