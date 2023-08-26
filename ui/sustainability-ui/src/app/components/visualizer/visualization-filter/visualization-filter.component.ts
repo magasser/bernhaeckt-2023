@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {CountyData} from "../../../models/countyData";
 import {FormControl, FormGroup} from '@angular/forms';
 import {CountyService} from "../../../services/county.service";
@@ -9,7 +9,7 @@ import {map, Observable, startWith} from "rxjs";
     templateUrl: './visualization-filter.component.html',
     styleUrls: ['./visualization-filter.component.scss'],
 })
-export class VisualizationFilterComponent {
+export class VisualizationFilterComponent implements OnInit{
     counties: FormControl = new FormControl([]);
     dimensions: FormControl = new FormControl([]);
     topics: FormControl = new FormControl([]);
@@ -53,7 +53,6 @@ export class VisualizationFilterComponent {
     loadData() {
         this.countyService.getCountiesData().subscribe(next => {
                 this.data = next;
-
                 this.topicList = this.uniquify(this.data.map((countyData) => countyData.topic));
                 this.dimensionList = this.uniquify(this.data.map((countyData) => countyData.dimension));
                 this.countyList = this.uniquify(this.data.map((countyData) => countyData.county));

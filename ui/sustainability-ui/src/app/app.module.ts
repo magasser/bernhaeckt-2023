@@ -35,6 +35,9 @@ import { AddIndicatorDataDialogComponent } from './components/admin/dialogs/add-
 import { VisualizationTableResultComponent } from './components/visualizer/visualization-table-result/visualization-table-result.component';
 import { VisualizationTableMatrixResultComponent } from './components/visualizer/visualization-table-matrix-result/visualization-table-matrix-result.component';
 import {AddIndicatorDialogComponent} from "./components/admin/add-indicator-dialog/add-indicator-dialog.component";
+import {
+  VisualizationChartResultComponent
+} from "./components/visualizer/visualization-chart-result/visualization-chart-result.component";
 
 @NgModule({
   declarations: [
@@ -54,6 +57,8 @@ import {AddIndicatorDialogComponent} from "./components/admin/add-indicator-dial
     AddIndicatorDataDialogComponent,
     VisualizationTableResultComponent,
     CountyComponent,
+    AddIndicatorDialogComponent,
+    VisualizationChartResultComponent,
     AddIndicatorDialogComponent,
     VisualizationTableMatrixResultComponent
   ],
