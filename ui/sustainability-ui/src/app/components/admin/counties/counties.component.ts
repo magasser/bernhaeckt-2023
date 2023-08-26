@@ -1,8 +1,8 @@
-import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription, firstValueFrom } from 'rxjs';
-import { County } from 'src/app/models/county';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { firstValueFrom } from 'rxjs';
 import { CountyService } from 'src/app/services/county.service';
+import { AddCountyDialogComponent } from '../add-county-dialog/add-county-dialog.component';
 
 export interface CountyData {
   id: string;
@@ -11,20 +11,16 @@ export interface CountyData {
   url: string;
 }
 
-const TEST: CountyData[] = [
-  {id: 'test', name: 'county', zip: 1234, url: 'asdfs'}
-];
-
 @Component({
   selector: 'app-counties',
   templateUrl: './counties.component.html',
-  styleUrls: ['./counties.component.scss']
+  styleUrls: ['./counties.component.scss'],
 })
 export class CountiesComponent implements OnInit {
   public displayedColumns: string[] = ['name', 'zip', 'details'];
   public countyData: CountyData[];
 
-  constructor(private countyService: CountyService) {
+  constructor(private countyService: CountyService, public dialog: MatDialog) {
     this.countyData = [];
   }
 
@@ -36,5 +32,15 @@ export class CountiesComponent implements OnInit {
     counties.forEach(county => {
       this.countyData.push({id: county.id, name: county.name, zip: county.zip, url: `/admin/county/${county.id}`});
     });
+  }
+
+  public openAddCountyDialog(): void {
+    const dialogRef = this.dialog.open(AddCountyDialogComponent, {
+      data: { name: '', zip: 0},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    })
   }
 }
