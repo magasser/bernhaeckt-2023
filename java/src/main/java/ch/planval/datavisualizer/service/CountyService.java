@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Slf4j
@@ -24,5 +25,9 @@ public class CountyService {
 
     public County getCountyByZip(final String zip) {
         return this.countyRepository.findByZip(zip);
+    }
+
+    public List<County> getAllCounties() {
+        return this.countyRepository.findAll();
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface CountyController {
@@ -17,6 +18,10 @@ public interface CountyController {
     @RequestMapping(path = "/counties/{id}", method = RequestMethod.GET)
     @GetMapping("/")
     County getCountyById(@PathVariable(name="id") UUID id);
+
+    @RequestMapping(path = "/counties", method = RequestMethod.GET)
+    @GetMapping("/")
+    List<County> getAllCounties();
 
     @RequestMapping(path = "/counties/zip/{zip}", method = RequestMethod.GET)
     @GetMapping("/")

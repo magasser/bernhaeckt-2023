@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -29,5 +30,10 @@ public class CountyControllerImpl implements CountyController {
     @Override
     public County getCountyByZip(final String zip) {
         return this.countyService.getCountyByZip(zip);
+    }
+
+    @Override
+    public List<County> getAllCounties() {
+        return this.countyService.getAllCounties();
     }
 }
