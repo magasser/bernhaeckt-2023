@@ -25,9 +25,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AddCountyDialogComponent } from './components/admin/add-county-dialog/add-county-dialog.component';
 import { VisualizationRowComponent } from './components/visualizer/visualization-row/visualization-row.component';
 import {MatExpansionModule} from "@angular/material/expansion";
-import {
-    VisualizationFilterComponent
-} from './components/visualizer/visualization-filter/visualization-filter.component';
 import {MatSelectModule} from "@angular/material/select";
 import {NgFor} from "@angular/common";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
