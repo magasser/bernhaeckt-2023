@@ -46,4 +46,10 @@ public class IndicatorService {
     public void saveIndicator(Indicator indicator) {
         this.indicatorRepository.save(indicator);
     }
+
+    public void updateIndicator(Indicator indicator) {
+        Indicator oldIndicator = this.indicatorRepository.findById(indicator.getId()).orElseThrow();
+        this.indicatorRepository.delete(oldIndicator);
+        this.indicatorRepository.save(indicator);
+    }
 }

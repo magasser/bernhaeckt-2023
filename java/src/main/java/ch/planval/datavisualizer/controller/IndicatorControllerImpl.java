@@ -33,12 +33,12 @@ public class IndicatorControllerImpl implements IndicatorController {
     }
 
     @Override
-    public IndicatorComplete getIndicatorCompleteById(UUID id) {
+    public IndicatorComplete getIndicatorCompleteById(final UUID id) {
         return this.indicatorService.getIndicatorCompleteById(id);
     }
 
     @Override
-    public List<Source> getSourcesByIndicatorId(UUID id) {
+    public List<Source> getSourcesByIndicatorId(final UUID id) {
         return this.indicatorService.getIndicatorById(id).getLinkedSources();
     }
 
@@ -53,8 +53,12 @@ public class IndicatorControllerImpl implements IndicatorController {
     }
 
     @Override
-    public void saveIndicator(Indicator indicator) {
+    public void saveIndicator(final Indicator indicator) {
         this.indicatorService.saveIndicator(indicator);
     }
 
+    @Override
+    public void updateIndicator(final Indicator indicator) {
+        this.indicatorService.updateIndicator(indicator);
+    }
 }
