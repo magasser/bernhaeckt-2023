@@ -2,11 +2,14 @@ package ch.planval.datavisualizer.controller;
 
 import ch.planval.datavisualizer.model.Indicator;
 import ch.planval.datavisualizer.model.IndicatorComplete;
+import ch.planval.datavisualizer.model.Source;
 import ch.planval.datavisualizer.service.IndicatorService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -30,6 +33,11 @@ public class IndicatorControllerImpl implements IndicatorController {
     @Override
     public IndicatorComplete getIndicatorCompleteById(UUID id) {
         return this.indicatorService.getIndicatorCompleteById(id);
+    }
+
+    @Override
+    public List<Source> getSourcesByIndicatorId(UUID id) {
+        return this.indicatorService.getIndicatorById(id).getLinkedSources();
     }
 
     @Override

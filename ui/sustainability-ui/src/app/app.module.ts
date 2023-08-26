@@ -16,8 +16,8 @@ import { IndicatorsComponent } from './components/admin/indicators/indicators.co
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
 import {HeaderComponent} from "./components/header/header.component";
-import {MatButtonModule} from "@angular/material/button";
 import {DataEvaluationComponent} from "./pages/data-evaluation/data-evaluation.component";
 
 @NgModule({
