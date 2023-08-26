@@ -1,6 +1,8 @@
 package ch.planval.datavisualizer.controller;
 
 import ch.planval.datavisualizer.model.County;
+import ch.planval.datavisualizer.model.CountyData;
+import ch.planval.datavisualizer.service.CountyDataService;
 import ch.planval.datavisualizer.service.CountyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +17,16 @@ public interface CountyController {
     @Autowired
     void setCountyService(CountyService countyService);
 
+    @Autowired
+    void setCountyDataService(CountyDataService countyDataService);
+
     @RequestMapping(path = "/counties/{id}", method = RequestMethod.GET)
     @GetMapping("/")
     County getCountyById(@PathVariable(name="id") UUID id);
+
+    @RequestMapping(path = "/counties/{id}/data", method = RequestMethod.GET)
+    @GetMapping("/")
+    CountyData getCountyDataById(@PathVariable(name="id") UUID id);
 
     @RequestMapping(path = "/counties", method = RequestMethod.GET)
     @GetMapping("/")

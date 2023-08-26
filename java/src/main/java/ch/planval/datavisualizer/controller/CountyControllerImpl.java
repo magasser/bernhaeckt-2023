@@ -1,6 +1,8 @@
 package ch.planval.datavisualizer.controller;
 
 import ch.planval.datavisualizer.model.County;
+import ch.planval.datavisualizer.model.CountyData;
+import ch.planval.datavisualizer.service.CountyDataService;
 import ch.planval.datavisualizer.service.CountyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import java.util.UUID;
 @Slf4j
 public class CountyControllerImpl implements CountyController {
     private CountyService countyService;
+    private CountyDataService countyDataService;
 
     @Override
     @Autowired
@@ -23,8 +26,19 @@ public class CountyControllerImpl implements CountyController {
     }
 
     @Override
+    @Autowired
+    public void setCountyDataService(final CountyDataService countyDataService) {
+        this.countyDataService = countyDataService;
+    }
+
+    @Override
     public County getCountyById(final UUID id) {
         return this.countyService.getCountyById(id);
+    }
+
+    @Override
+    public CountyData getCountyDataById(UUID id) {
+        return this.countyDataService.getCountyDataById(id);
     }
 
     @Override
