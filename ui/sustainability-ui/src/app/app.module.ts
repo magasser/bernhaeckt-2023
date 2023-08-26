@@ -31,6 +31,9 @@ import {
 import {MatSelectModule} from "@angular/material/select";
 import {NgFor} from "@angular/common";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import { VisualizationFilterComponent } from './components/visualizer/visualization-filter/visualization-filter.component';
+import { CountyComponent } from './pages/county/county.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,8 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     DataEvaluationComponent,
     AddCountyDialogComponent,
     VisualizationRowComponent,
-    VisualizationFilterComponent
+    VisualizationFilterComponent,
+    CountyComponent
   ],
   imports: [
     BrowserModule,

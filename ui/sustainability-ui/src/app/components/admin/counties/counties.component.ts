@@ -4,13 +4,7 @@ import { firstValueFrom } from 'rxjs';
 import { CountyService } from 'src/app/services/county.service';
 import { AddCountyDialogComponent } from '../add-county-dialog/add-county-dialog.component';
 import { MatTableDataSource } from '@angular/material/table';
-
-export interface CountyData {
-  id: string;
-  name: string;
-  zip: number;
-  url: string;
-}
+import { County } from 'src/app/models/county';
 
 @Component({
   selector: 'app-counties',
@@ -19,24 +13,14 @@ export interface CountyData {
 })
 export class CountiesComponent implements OnInit {
   public displayedColumns: string[] = ['name', 'zip', 'details'];
-  public countyData: CountyData[];
-  public dataSource: MatTableDataSource<CountyData>;
+  public dataSource: MatTableDataSource<County>;
 
   constructor(private countyService: CountyService, public dialog: MatDialog) {
-    this.countyData = [];
-    this.dataSource = new MatTableDataSource<CountyData>();
+    this.dataSource = new MatTableDataSource<County>();
   }
 
   async ngOnInit(): Promise<void> {
-    this.countyData = [];
-
-    const counties = await firstValueFrom(this.countyService.getCounties());
-
-    counties.forEach(county => {
-      this.countyData.push({id: county.id, name: county.name, zip: county.zip, url: `/admin/county/${county.id}`});
-    });
-
-    this.dataSource.data = this.countyData;
+    await this.refreshCounties();
   }
 
   public openAddCountyDialog(): void {
@@ -44,11 +28,20 @@ export class CountiesComponent implements OnInit {
       data: { name: '', zip: 0},
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(async (result) => {
       if (!result) {
         return;
       }
-      console.log(result);
-    })
+
+      this.countyService.saveCounty(result);
+
+      await this.refreshCounties();
+    });
+  }
+
+  private async refreshCounties(): Promise<void> {
+    const counties = await firstValueFrom(this.countyService.getCounties());
+
+    this.dataSource.data = counties;
   }
 }

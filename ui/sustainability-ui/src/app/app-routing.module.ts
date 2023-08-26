@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataVisualizerComponent } from './pages/data-visualizer/data-visualizer.component';
 import { DataManagerComponent } from './pages/data-manager/data-manager.component';
 import {DataEvaluationComponent} from "./pages/data-evaluation/data-evaluation.component";
+import { CountyComponent } from './pages/county/county.component';
 
 const routes: Routes = [
   { path: '', component: DataVisualizerComponent },
   { path: 'admin', component: DataManagerComponent },
-  { path: 'evaluation', component: DataEvaluationComponent}
+  { path: 'admin/county/:id', component: CountyComponent },
+  { path: 'evaluation', component: DataEvaluationComponent },
 ];
 
 @NgModule({

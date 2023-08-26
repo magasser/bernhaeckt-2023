@@ -39,6 +39,10 @@ public class IndicatorService {
         return this.indicatorRepository.findAll();
     }
 
+    public List<IndicatorComplete> getAllIndicatorsComplete() {
+        return this.indicatorCompleteRepository.findAll();
+    }
+
     public void saveIndicator(Indicator indicator) {
         this.indicatorRepository.save(indicator);
     }

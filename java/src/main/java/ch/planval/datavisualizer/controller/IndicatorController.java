@@ -28,6 +28,10 @@ public interface IndicatorController {
     @GetMapping("/")
     IndicatorComplete getIndicatorCompleteById(@PathVariable(name="id") UUID id);
 
+    @RequestMapping(path = "/indicators/complete", method = RequestMethod.GET)
+    @GetMapping("/")
+    List<IndicatorComplete> getAllIndicatorsComplete();
+
     @RequestMapping(path = "/indicators/{id}/sources", method = RequestMethod.GET)
     @GetMapping("/")
     List<Source> getSourcesByIndicatorId(@PathVariable(name="id") UUID id);

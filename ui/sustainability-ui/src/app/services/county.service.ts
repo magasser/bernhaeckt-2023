@@ -35,6 +35,12 @@ export class CountyService {
     );
   }
 
+  public saveCounty(county: County): void {
+    const url = `${this.baseUrl}/county`;
+
+    this.http.post<County>(url, county, { headers: this.headers}).subscribe({error: this.handleError});
+  }
+
   private handleError(error: HttpErrorResponse): Observable<never> {
     const msg = error.error instanceof ErrorEvent
     ? error.error.message
