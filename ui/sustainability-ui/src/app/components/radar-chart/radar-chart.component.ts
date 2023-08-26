@@ -9,5 +9,13 @@ export class RadarChartComponent {
 
   @Input()
   data = {};
+  options = {
+    responsive: true,
+    maintainAspectRatio: true,
+    scale: {
+      min: 0,
+      max: 10,
+    }
+  }
 
 }
