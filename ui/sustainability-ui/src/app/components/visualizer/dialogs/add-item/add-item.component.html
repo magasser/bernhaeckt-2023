@@ -1,0 +1,17 @@
+<h1 mat-dialog-title class="dialog-title" i18n>Erstelle Eintrag</h1>
+<div mat-dialog-content>
+    <mat-form-field class="form-field">
+        <mat-label i18n>Typ</mat-label>
+        <mat-select [(value)]="item.type">
+            <mat-option *ngFor="let type of itemTypes" [value]="type[1]">{{type[1]}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label i18n>Gewicht</mat-label>
+        <input type="number" matInput [(ngModel)]="item.weight">
+    </mat-form-field>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="secondary" (click)="onCancel()" i18n>Abbrechen</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="item" cdkFocusInitial i18n>Speichern</button>
+    </div>
+</div>

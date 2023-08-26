@@ -1,5 +1,5 @@
 export enum ItemType {
-    TABLE,
-    MATRIX,
-    SPIDER_CHART
+    TABLE = 'Tabelle',
+    MATRIX = 'Matrix',
+    SPIDER_CHART = 'Spinnendiagramm'
 }

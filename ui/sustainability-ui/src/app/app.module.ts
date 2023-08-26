@@ -38,6 +38,8 @@ import {AddIndicatorDialogComponent} from "./components/admin/add-indicator-dial
 import {
   VisualizationChartResultComponent
 } from "./components/visualizer/visualization-chart-result/visualization-chart-result.component";
+import { AddItemComponent } from './components/visualizer/dialogs/add-item/add-item.component';
+import { AddRowComponent } from './components/visualizer/dialogs/add-row/add-row.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import {
     AddIndicatorDialogComponent,
     VisualizationChartResultComponent,
     AddIndicatorDialogComponent,
-    VisualizationTableMatrixResultComponent
+    VisualizationTableMatrixResultComponent,
+    AddItemComponent,
+    AddRowComponent
   ],
   imports: [
     BrowserModule,
