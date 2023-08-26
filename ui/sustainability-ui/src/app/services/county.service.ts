@@ -35,6 +35,17 @@ export class CountyService {
     );
   }
 
+  public getCountyData(id: string): Observable<CountyData> {
+    const url = `${this.baseUrl}/counties/${id}/data`;
+
+    return this.http.get<CountyData>(url, { headers: this.headers}).pipe(
+      map((res) => {
+        return res || undefined;
+      }),
+      catchError(this.handleError)
+    );
+  }
+
   public saveCounty(county: County): void {
     const url = `${this.baseUrl}/county`;
 

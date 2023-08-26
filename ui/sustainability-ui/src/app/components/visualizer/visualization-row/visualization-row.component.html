@@ -11,7 +11,7 @@
         <div>
             <app-visualization-filter (filterDataEvent)="updateFilteredData($event)"></app-visualization-filter>
             <div>
-                {{filteredData}}
+                <app-visualization-table-result [data]="filteredData"></app-visualization-table-result>
             </div>
         </div>
     </mat-expansion-panel>
