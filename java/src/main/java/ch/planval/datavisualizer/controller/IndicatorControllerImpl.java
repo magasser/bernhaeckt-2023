@@ -25,4 +25,10 @@ public class IndicatorControllerImpl implements IndicatorController {
     public Indicator getIndicatorById(final UUID id) {
         return this.indicatorService.getIndicatorById(id);
     }
+
+    @Override
+    public void saveIndicator(Indicator snippetToSave) {
+        this.indicatorService.saveIndicator(snippetToSave);
+    }
+
 }

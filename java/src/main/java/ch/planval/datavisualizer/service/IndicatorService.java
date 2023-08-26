@@ -19,6 +19,10 @@ public class IndicatorService {
     }
 
     public Indicator getIndicatorById(final UUID id) {
-        return indicatorRepository.findById(id).orElse(null);
+        return this.indicatorRepository.findById(id).orElse(null);
+    }
+
+    public void saveIndicator(Indicator indicator) {
+        this.indicatorRepository.save(indicator);
     }
 }
