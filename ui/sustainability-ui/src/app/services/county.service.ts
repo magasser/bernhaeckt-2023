@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { County } from '../models/county';
 import { Observable, catchError, map, throwError } from 'rxjs';
+import {CountyData} from "../models/countyData";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,17 @@ export class CountyService {
     const url = `${this.baseUrl}/counties`;
 
     return this.http.get<County[]>(url, {headers: this.headers}).pipe(
+      map((res) => {
+        return res || [];
+      }),
+      catchError(this.handleError)
+    );
+  }
+
+  public getCountiesData(): Observable<CountyData[]> {
+    const url = `${this.baseUrl}/counties/data`;
+
+    return this.http.get<CountyData[]>(url, {headers: this.headers}).pipe(
       map((res) => {
         return res || [];
       }),

@@ -23,6 +23,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddCountyDialogComponent } from './components/admin/add-county-dialog/add-county-dialog.component';
+import { VisualizationRowComponent } from './components/visualizer/visualization-row/visualization-row.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import { VisualizationFilterComponent } from './components/visualizer/visualization-filter/visualization-filter.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { AddCountyDialogComponent } from './components/admin/add-county-dialog/a
     IndicatorsComponent,
     HeaderComponent,
     DataEvaluationComponent,
-    AddCountyDialogComponent
+    AddCountyDialogComponent,
+    VisualizationRowComponent,
+    VisualizationFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ import { AddCountyDialogComponent } from './components/admin/add-county-dialog/a
     MatButtonModule,
     MatDialogModule, 
     MatInputModule, 
-    FormsModule
+    FormsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

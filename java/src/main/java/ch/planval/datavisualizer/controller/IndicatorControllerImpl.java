@@ -6,6 +6,7 @@ import ch.planval.datavisualizer.model.Source;
 import ch.planval.datavisualizer.service.IndicatorService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping(path = "/api")
 @Slf4j
 public class IndicatorControllerImpl implements IndicatorController {
@@ -41,8 +43,8 @@ public class IndicatorControllerImpl implements IndicatorController {
     }
 
     @Override
-    public void saveIndicator(Indicator snippetToSave) {
-        this.indicatorService.saveIndicator(snippetToSave);
+    public void saveIndicator(Indicator indicator) {
+        this.indicatorService.saveIndicator(indicator);
     }
 
 }

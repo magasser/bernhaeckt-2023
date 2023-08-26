@@ -1,1 +1,4 @@
 <app-header></app-header>
+<div class="rows">
+    <app-visualization-row *ngFor="let row of rows" [config]="row"></app-visualization-row>
+</div>

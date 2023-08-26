@@ -1,20 +1,25 @@
 package ch.planval.datavisualizer.model;
 
-import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.util.UUID;
 
 @Data
-@Table(name = "counties")
+@Table(name = "COUNTIES")
 @Entity
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class County {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @Column(name = "zip")
     private int zip;

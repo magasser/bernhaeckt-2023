@@ -30,4 +30,8 @@ public class CountyService {
     public List<County> getAllCounties() {
         return this.countyRepository.findAll();
     }
+
+    public void saveCounty(County county) {
+        this.countyRepository.save(county);
+    }
 }

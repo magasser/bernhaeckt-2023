@@ -6,6 +6,7 @@ import ch.planval.datavisualizer.service.CountyDataService;
 import ch.planval.datavisualizer.service.CountyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping(path = "/api")
 @Slf4j
 public class CountyControllerImpl implements CountyController {
@@ -49,5 +51,15 @@ public class CountyControllerImpl implements CountyController {
     @Override
     public List<County> getAllCounties() {
         return this.countyService.getAllCounties();
+    }
+
+    @Override
+    public List<CountyData> getAllCountiesData() {
+        return this.countyDataService.getAllCounties();
+    }
+
+    @Override
+    public void saveCounty(County county) {
+        this.countyService.saveCounty(county);
     }
 }
