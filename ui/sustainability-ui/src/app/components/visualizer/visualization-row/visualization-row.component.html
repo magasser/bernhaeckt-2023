@@ -9,17 +9,32 @@
             </mat-panel-description>
         </mat-expansion-panel-header>
         <div>
-            <app-visualization-filter (filterDataEvent)="updateFilteredData($event)" [filter]="config.filters ?? {}"></app-visualization-filter>
+            <div class="header">
+                <app-visualization-filter (filterDataEvent)="updateFilteredData($event)"
+                                          [filter]="config.filters ?? {}"></app-visualization-filter>
+                <button class="add-button" color="primary" mat-icon-button (click)="openAddItemDialog()" extended i18n>
+                    <mat-icon>add</mat-icon>
+                </button>
+                <button class="add-button" color="secondary" mat-icon-button (click)="openEditRowDialog()" extended i18n>
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+
             <div class="container" [class.container-2]="config.rows === 2"
                  [class.container-3]="config.rows === 3"
                  [class.container-4]="config.rows === 4">
-                <ng-container *ngFor="let item of config.config.sort(sortByWeight)">
-                    <app-visualization-table-result [data]="filteredData"
-                                                    *ngIf="item.type === ItemType.TABLE"></app-visualization-table-result>
-                    <app-visualization-table-matrix-result [data]="filteredData"
-                                                           *ngIf="item.type === ItemType.MATRIX"></app-visualization-table-matrix-result>
-                    <app-visualization-chart-result [data]="filteredData"
-                                                           *ngIf="item.type === ItemType.SPIDER_CHART"></app-visualization-chart-result>
+                <ng-container *ngFor="let item of config.config.sort(sortByWeight);let itemIndex=index;">
+                    <div class="item">
+                        <app-visualization-table-result [data]="filteredData"
+                                                        *ngIf="item.type === ItemType.TABLE"></app-visualization-table-result>
+                        <app-visualization-table-matrix-result [data]="filteredData"
+                                                               *ngIf="item.type === ItemType.MATRIX"></app-visualization-table-matrix-result>
+                        <app-visualization-chart-result [data]="filteredData"
+                                                        *ngIf="item.type === ItemType.SPIDER_CHART"></app-visualization-chart-result>
+                        <button class="delete-button" mat-icon-button color="secondary" (click)="removeItem(itemIndex)" extended>
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
                 </ng-container>
             </div>
         </div>
