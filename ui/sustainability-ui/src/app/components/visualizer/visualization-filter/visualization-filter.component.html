@@ -1,7 +1,7 @@
 <div class="filters">
     <mat-form-field class="filter">
-        <mat-label i18n>Gemeinde</mat-label>
-        <mat-select [formControl]="counties" multiple (selectionChange)="updateFilter()" id="blub">
+        <mat-label i18n>County</mat-label>
+        <mat-select [formControl]="counties" multiple (selectionChange)="updateFilter()">
             <mat-option *ngFor="let county of countyList" [value]="county">{{county}}</mat-option>
         </mat-select>
     </mat-form-field>
@@ -12,13 +12,13 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field class="filter">
-        <mat-label i18n>Thema</mat-label>
+        <mat-label i18n>Topic</mat-label>
         <mat-select [formControl]="topics" multiple (selectionChange)="updateFilter()">
             <mat-option *ngFor="let topic of topicList" [value]="topic">{{topic}}</mat-option>
         </mat-select>
     </mat-form-field>
     <mat-form-field class="filter indicator">
-        <mat-label i18n>Indikator</mat-label>
+        <mat-label i18n>Indicator</mat-label>
         <mat-select [formControl]="indicators" multiple (selectionChange)="updateFilter()">
             <mat-option *ngFor="let indicator of indicatorList" [value]="indicator">{{indicator}}</mat-option>
         </mat-select>

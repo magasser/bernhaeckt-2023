@@ -12,10 +12,10 @@
             <div class="header">
                 <app-visualization-filter (filterDataEvent)="updateFilteredData($event)"
                                           [filter]="config.filters ?? {}"></app-visualization-filter>
-                <button class="add-button" color="primary" mat-icon-button (click)="openAddItemDialog()" extended i18n>
+                <button class="add-button" color="primary" mat-icon-button (click)="openAddItemDialog()" extended>
                     <mat-icon>add</mat-icon>
                 </button>
-                <button class="add-button" color="secondary" mat-icon-button (click)="openEditRowDialog()" extended i18n>
+                <button class="add-button" color="secondary" mat-icon-button (click)="openEditRowDialog()" extended>
                     <mat-icon>edit</mat-icon>
                 </button>
             </div>

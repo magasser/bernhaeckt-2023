@@ -1,19 +1,19 @@
-<h1 mat-dialog-title class="dialog-title" i18n>Erstelle Zeile</h1>
+<h1 mat-dialog-title class="dialog-title" i18n>Create Row</h1>
 <div mat-dialog-content>
     <mat-form-field class="form-field">
-        <mat-label i18n>Titel</mat-label>
+        <mat-label i18n>Title</mat-label>
         <input matInput [(ngModel)]="item.title">
     </mat-form-field>
     <mat-form-field class="form-field">
-        <mat-label i18n>Beschreibung</mat-label>
+        <mat-label i18n>Description</mat-label>
         <input matInput [(ngModel)]="item.description">
     </mat-form-field>
     <mat-form-field class="form-field">
-        <mat-label i18n>Anzahl Spalten</mat-label>
+        <mat-label i18n>Column Count</mat-label>
         <input type="number" matInput [(ngModel)]="item.rows">
     </mat-form-field>
     <div mat-dialog-actions>
-        <button mat-raised-button color="secondary" (click)="onCancel()" i18n>Abbrechen</button>
-        <button mat-raised-button color="primary" [mat-dialog-close]="item" cdkFocusInitial i18n>Speichern</button>
+        <button mat-raised-button color="secondary" (click)="onCancel()" i18n>Cancel</button>
+        <button mat-raised-button color="primary" [mat-dialog-close]="item" cdkFocusInitial i18n>Save</button>
     </div>
 </div>

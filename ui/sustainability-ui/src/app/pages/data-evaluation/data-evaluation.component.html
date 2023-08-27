@@ -2,7 +2,7 @@
 <div class="rows">
     <button class="add-button" color="primary" mat-fab (click)="openAddRowDialog()" extended i18n>
         <mat-icon>add</mat-icon>
-        Erstelle Zeile
+        Create Evaluation
     </button>
     <div class="row-container" *ngFor="let row of rows; let rowIndex=index;">
         <app-visualization-row  [config]="row"></app-visualization-row>

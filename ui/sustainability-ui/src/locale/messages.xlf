@@ -2,6 +2,407 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="8652793441573140186" datatype="html">
+        <source>Add Indicator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/add-indicator-dialog/add-indicator-dialog.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8953033926734869941" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/add-indicator-dialog/add-indicator-dialog.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/counties/counties.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/indicators/indicators.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/county/county.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2662644497259948010" datatype="html">
+        <source>Comment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/add-indicator-dialog/add-indicator-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/indicators/indicators.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8932917860978648376" datatype="html">
+        <source>Unit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/add-indicator-dialog/add-indicator-dialog.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/indicators/indicators.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8731408696097020027" datatype="html">
+        <source>Topic Id</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/add-indicator-dialog/add-indicator-dialog.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2159130950882492111" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/add-indicator-dialog/add-indicator-dialog.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-county-dialog/add-county-dialog.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-indicator-data-dialog/add-indicator-data-dialog.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/county-indicator-modify-dialog/county-indicator-modify-dialog.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-item/add-item.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-row/add-row.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3249513483374643425" datatype="html">
+        <source>Add</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/add-indicator-dialog/add-indicator-dialog.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-county-dialog/add-county-dialog.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-indicator-data-dialog/add-indicator-data-dialog.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1048205129344189505" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="t-icon&gt;"/>add<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Add County
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/counties/counties.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4585143651785848185" datatype="html">
+        <source>ZIP Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/counties/counties.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2711035164461739469" datatype="html">
+        <source>Add County</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-county-dialog/add-county-dialog.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-indicator-data-dialog/add-indicator-data-dialog.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/county-indicator-modify-dialog/county-indicator-modify-dialog.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3600176314316465432" datatype="html">
+        <source>County Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-county-dialog/add-county-dialog.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5230463094926264406" datatype="html">
+        <source>County ZIP Code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-county-dialog/add-county-dialog.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2981823257092175179" datatype="html">
+        <source>Indicator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-indicator-data-dialog/add-indicator-data-dialog.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/visualization-filter/visualization-filter.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9155608366859514313" datatype="html">
+        <source>Source</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-indicator-data-dialog/add-indicator-data-dialog.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/county/county.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9174236079134908499" datatype="html">
+        <source>Indicator Value</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/add-indicator-data-dialog/add-indicator-data-dialog.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6013616004344616427" datatype="html">
+        <source>County Indicator Source</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/county-indicator-modify-dialog/county-indicator-modify-dialog.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1104503358532497104" datatype="html">
+        <source>County Indicavor Value</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/county-indicator-modify-dialog/county-indicator-modify-dialog.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3251759404563225821" datatype="html">
+        <source>Modify</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/dialogs/county-indicator-modify-dialog/county-indicator-modify-dialog.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8932309699343169860" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="t-icon&gt;"/>add<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Add Indicator
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/indicators/indicators.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="152684207308120408" datatype="html">
+        <source>Topic Id</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/admin/indicators/indicators.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4478639614596934898" datatype="html">
+        <source>Planval Logo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8215702797302763666" datatype="html">
+        <source>Sustainability Data</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/header/header.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="918029365747744094" datatype="html">
+        <source>Create Entry</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-item/add-item.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8650499415827640724" datatype="html">
+        <source>Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-item/add-item.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5848348023107769657" datatype="html">
+        <source>Weight</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-item/add-item.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3768927257183755959" datatype="html">
+        <source>Save</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-item/add-item.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-row/add-row.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8998769679561733093" datatype="html">
+        <source>Create Row</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-row/add-row.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5701618810648052610" datatype="html">
+        <source>Title</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-row/add-row.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4902817035128594900" datatype="html">
+        <source>Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-row/add-row.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2365347763933401619" datatype="html">
+        <source>Column Count</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/dialogs/add-row/add-row.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3394206503815564138" datatype="html">
+        <source>County</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/visualization-filter/visualization-filter.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="801511044046681189" datatype="html">
+        <source>Dimension</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/visualization-filter/visualization-filter.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/county/county.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5885452247889934944" datatype="html">
+        <source>Topic</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/visualization-filter/visualization-filter.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/county/county.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1962173021377684955" datatype="html">
+        <source> Dimension </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/visualization-table-result/visualization-table-result.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6289100530445553482" datatype="html">
+        <source> Topic </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/visualization-table-result/visualization-table-result.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1871098474131633903" datatype="html">
+        <source> Indicator </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/visualization-table-result/visualization-table-result.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4068050958213740691" datatype="html">
+        <source> County </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/visualization-table-result/visualization-table-result.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7394649408594397312" datatype="html">
+        <source> Value </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/visualizer/visualization-table-result/visualization-table-result.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21026169898861339" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="t-icon&gt;"/>add<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Add Indicator Data
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/county/county.component.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6555318547274416232" datatype="html">
+        <source>Value</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/county/county.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3706222784708785028" datatype="html">
+        <source>Rating</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/county/county.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2450003903643925541" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="t-icon&gt;"/>add<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Create Evaluation </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/data-evaluation/data-evaluation.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1569405555730611931" datatype="html">
+        <source>Counties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/data-manager/data-manager.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3692472038933752153" datatype="html">
+        <source>Indicators</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/data-manager/data-manager.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8203415891066173587" datatype="html">
+        <source>Adminpanel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/data-visualizer/data-visualizer.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="293202751009664066" datatype="html">
+        <source>Evaluations</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/data-visualizer/data-visualizer.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
